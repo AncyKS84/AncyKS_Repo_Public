@@ -13,8 +13,18 @@ public class QALegendHomePage
 	public PageUtilities pageutilities;
 	@FindBy (xpath  ="//span[text()='Events']")
 	WebElement homePageEventButton;
-	
-	
+	@FindBy(xpath = "//span[text()='Lekshmi Nair']")
+	WebElement profileName;
+	@FindBy(xpath = "//span[text()='Notes']")
+	WebElement homePageNotesButton;
+	@FindBy(xpath = "//span[text()='Messages']")
+	WebElement homePageMessagesButton;
+	@FindBy(xpath = "//span[text()='Clients']")
+	WebElement homePageClientsbutton;
+	@FindBy(xpath = "//span[text()='Projects']")
+	WebElement homePageProjectButton;
+	@FindBy (xpath = "//span[text()='All Projects']")
+	WebElement allProjectsButton;
 	
 	
 	public QALegendHomePage(WebDriver driver) 
@@ -30,5 +40,28 @@ public class QALegendHomePage
 	public void clickOnHomePageEventButton()
 	{
 		homePageEventButton.click();
+	}
+	
+	public boolean checkforProfileName()
+	{
+		return pageutilities.isElementDisplayed(profileName);
+	}
+	
+	public void clickOnHomePageNotesButton()
+	{
+		homePageNotesButton.click();
+	}
+	public void clickOnHomePageMessageButton()
+	{
+		homePageMessagesButton.click();
+	}
+	public void clickOnHomePageClientsButton()
+	{
+		homePageClientsbutton.click();
+	}
+	public void clickOnHomePageAllProjectsButton()
+	{
+		homePageProjectButton.click();
+		allProjectsButton.click();
 	}
 }

@@ -12,27 +12,27 @@ import constants.ConstantValues;
 public class WaitUtility 
 {	
 	
-	public void waitForClickingElement(WebDriver driver,WebElement element)
+	public static void waitForClickingElement(WebDriver driver,WebElement element)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(ConstantValues.EXPLICITWAIT));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
-	public void waitForTextToBePresentInElement(WebDriver driver,WebElement element,String text)
+	public static void waitForTextToBePresentInElement(WebDriver driver,WebElement element,String text)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(ConstantValues.EXPLICITWAIT));
 		wait.until(ExpectedConditions.textToBePresentInElement(element, text));
 	}
-	public void waitForElementToBeSelected(WebDriver driver,WebElement element)
+	public static void waitForElementToBeSelected(WebDriver driver,WebElement element)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(ConstantValues.EXPLICITWAIT));
 		wait.until(ExpectedConditions.elementToBeSelected(element));
 	}
-	public void waitForAttributeToBe(WebDriver driver,WebElement element,String attribute, String value)
+	public static void waitForAttributeToBe(WebDriver driver,WebElement element,String attribute, String value)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(ConstantValues.EXPLICITWAIT));
 		wait.until(ExpectedConditions.attributeToBe(element, attribute,value));
 	}
-	public void waitForVisibilityOfElement(WebDriver driver, WebElement element)
+	public static void waitForVisibilityOfElement(WebDriver driver, WebElement element)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(ConstantValues.EXPLICITWAIT));
 	    wait.until(ExpectedConditions.visibilityOf(element));

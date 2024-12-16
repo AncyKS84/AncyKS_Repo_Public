@@ -13,17 +13,26 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import constants.ConstantValues;
+import pageClasses.QALegendClientsPage;
 import pageClasses.QALegendEventPage;
 import pageClasses.QALegendHomePage;
 import pageClasses.QALegendLoginPage;
+import pageClasses.QALegendMessagesPage;
+import pageClasses.QALegendNotesPage;
+import pageClasses.QALegendProjectPage;
 import utilities.ExcelUtility;
 
 public class BaseClass 
 {
 	public WebDriver driver;
 	QALegendLoginPage loginpage;
-	QALegendHomePage homePage;
+	QALegendHomePage homepage;
 	QALegendEventPage eventpage;
+	QALegendNotesPage notespage;
+	QALegendMessagesPage messagespage;
+	QALegendClientsPage clientspage;
+	QALegendProjectPage projectpage;
+	
 	public Properties prop;
 	public FileInputStream fis;
 	
@@ -49,8 +58,12 @@ public class BaseClass
 		driver.get(prop.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		loginpage =new QALegendLoginPage(driver);
-		homePage= new QALegendHomePage(driver);
-		eventpage=new QALegendEventPage(driver);		
+		homepage= new QALegendHomePage(driver);
+		eventpage=new QALegendEventPage(driver);	
+		notespage=new QALegendNotesPage(driver);
+		messagespage= new QALegendMessagesPage(driver);
+		clientspage = new QALegendClientsPage(driver);
+		projectpage = new QALegendProjectPage(driver);
 	}
 
 }

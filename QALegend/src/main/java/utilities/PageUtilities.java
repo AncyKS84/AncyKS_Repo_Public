@@ -78,6 +78,20 @@ public class PageUtilities
 		actions.build().perform();
 
 	}
+	public void enterkeyPress()
+	{
+		Actions actions = new Actions(driver);
+		actions.sendKeys(Keys.ENTER); // to perform key press from keyboard.
+		actions.build().perform();
+
+	}
+	public void downArrowPress()
+	{
+		Actions actions = new Actions(driver);
+		actions.sendKeys(Keys.DOWN); // to perform key press from keyboard.
+		actions.build().perform();
+
+	}
 	public void enterText(WebElement element,String text)
 	{
 		element.sendKeys(text);
@@ -162,6 +176,7 @@ public class PageUtilities
 	public boolean isElementDisplayed(WebElement element)
 	{
 		return element.isDisplayed();
+
 	}
 	
 	

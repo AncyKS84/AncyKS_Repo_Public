@@ -15,10 +15,8 @@ public class QALegendEventTest extends BaseClass
 	@Test
 	public void addEventTC() throws IOException
 	{
-		String userName=prop.getProperty("userName");
-		String pwd=prop.getProperty("password");
-		loginpage.login(userName, pwd);
-		homePage.clickOnHomePageEventButton();
+		loginpage.login(prop.getProperty("userName"), prop.getProperty("password"));
+		homepage.clickOnHomePageEventButton();
 		eventpage.clickOnAddEventButton();
 		String eventTitle= ExcelUtility.getStringData(1, 0, "Event")+FakerUtility.randomNuberGenerator();
 		
